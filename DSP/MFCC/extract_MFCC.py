@@ -8,7 +8,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from preprocessing import read_data, preEmphasis, enframed
 from scipy.fftpack import dct
-from VAD import point_check
 
 
 def extractMFCC(frames, framerate, NFFT, n_filters=24, num_ceps=12):
@@ -88,20 +87,18 @@ def extractMFCC(frames, framerate, NFFT, n_filters=24, num_ceps=12):
 
 
 if __name__ == '__main__':
-    data_path = './audio_recording.wav'
+    data_path = './voice_data/OSR_us_000_0010_8k.wav'
     win_len = 256
     step_len = 128
     n_filters = 26  # mel滤波器的个数
     wave_data, nframes, framerate = read_data(data_path)
-    # wave_data = wave_data[:3*framerate]
-    # nframes = 3*framerate
-    # time_list = np.array(range(0, nframes)) * (1.0/framerate)
+    wave_data = wave_data[:3*framerate]
+    nframes = 3*framerate
+    time_list = np.array(range(0, nframes)) * (1.0/framerate)
     emphasized_signal = preEmphasis(wave_data, 0.97)
-    # plt.plot(time_list, emphasized_signal)
-    # plt.show()
+#     plt.plot(time_list, emphasized_signal)
+#     plt.show()
     frames = enframed(emphasized_signal, win_len, step_len, win_method=1)  # (186, 256)
-    StartPoint, EndPoint = point_check(frames)  # 端点检测
-    framed_voice = frames[StartPoint:EndPoint, :]  # 分帧后的语音段
     NFFT = win_len
     mfcc = extractMFCC(framed_voice, framerate, NFFT, n_filters)
     print(mfcc)
