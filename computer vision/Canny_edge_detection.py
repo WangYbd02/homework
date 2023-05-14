@@ -49,7 +49,7 @@ def bilinear_interpolation(src, x, y):
 
 
 # get image
-img = cv.imread('C:/Users/Admin/Desktop/keqing.png', cv.IMREAD_GRAYSCALE)
+img = cv.imread('C:/Users/Admin/Desktop/test.png', cv.IMREAD_GRAYSCALE)
 
 
 # set parameters
