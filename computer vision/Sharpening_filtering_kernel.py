@@ -13,7 +13,7 @@ sigma2 = 0.5
 size2 = 3
 
 # get image
-img = cv.imread('C:/Users/Admin/Desktop/linghua.jpg', cv.IMREAD_GRAYSCALE)
+img = cv.imread('C:/Users/Admin/Desktop/test.jpg', cv.IMREAD_GRAYSCALE)
 
 # generate distance matrix
 distance_matrix = generate_distance_matrix_2d(size)
