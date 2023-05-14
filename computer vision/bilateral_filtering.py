@@ -14,7 +14,7 @@ sigma_s2 = 10
 sigma_r2 = 30
 
 # get image
-img = cv.imread('C:/Users/Admin/Desktop/linghua.jpg', cv.IMREAD_GRAYSCALE)
+img = cv.imread('C:/Users/Admin/Desktop/test.jpg', cv.IMREAD_GRAYSCALE)
 img = cv.resize(img, (100, 100))
 
 # # define bilateral filtering convolution function
