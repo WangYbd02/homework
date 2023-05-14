@@ -76,7 +76,7 @@ def moving(g, gg, j, k, m, n):
 
 
 # get image
-img = cv.imread('C:/Users/Admin/Desktop/keqing.png', cv.IMREAD_GRAYSCALE)
+img = cv.imread('C:/Users/Admin/Desktop/test.png', cv.IMREAD_GRAYSCALE)
 h, w = img.shape
 img1 = np.zeros((h, w), dtype=np.uint8)
 img1[:, :] = img[:, :]
