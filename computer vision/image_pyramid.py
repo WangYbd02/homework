@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 # get image
-img = cv.imread('C:/Users/Admin/Desktop/test_pic2.jpg', cv.IMREAD_GRAYSCALE)
+img = cv.imread('C:/Users/Admin/Desktop/test.jpg', cv.IMREAD_GRAYSCALE)
 
 # 2维高斯滤波核
 gaussian_kernel_1d = np.array([1, 4, 6, 4, 1])/16
