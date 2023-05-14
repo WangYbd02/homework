@@ -68,7 +68,7 @@ def generate_gaussian_kernel_2d(distance_matrix, size, sigma):
 
 
 # 获取图像
-img = cv.imread('C:/Users/Admin/Desktop/keqing.png', cv.IMREAD_GRAYSCALE)
+img = cv.imread('C:/Users/Admin/Desktop/test.png', cv.IMREAD_GRAYSCALE)
 
 # 设置参数
 sigma = 0.5
