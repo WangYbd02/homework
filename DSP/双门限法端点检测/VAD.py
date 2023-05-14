@@ -139,10 +139,6 @@ def point_check(framed):
 
 
 if __name__ == '__main__':
-    """
-    例子：3-0-0：噪声非常大
-         4-0-0：奇怪的声音
-    """
     data_path = 'D:/dataset/voice dataset/0/3-0-0.wav'
     win_len = 240
     step_len = 80
