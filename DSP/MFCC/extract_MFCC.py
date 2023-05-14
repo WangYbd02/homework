@@ -88,7 +88,7 @@ def extractMFCC(frames, framerate, NFFT, n_filters=24, num_ceps=12):
 
 
 if __name__ == '__main__':
-    data_path = 'D:/dataset/voice dataset/0/80-0-0.wav'
+    data_path = 'D:/dataset/voice dataset/0/0-0-0.wav'
     win_len = 256
     step_len = 128
     n_filters = 26  # mel滤波器的个数
