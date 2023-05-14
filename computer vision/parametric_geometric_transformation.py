@@ -2,10 +2,6 @@ import numpy as np
 import cv2.cv2 as cv
 import matplotlib.pyplot as plt
 
-# get image
-# img = cv.imread('C:/Users/Admin/Desktop/test_pic.jpg', cv.IMREAD_GRAYSCALE)
-# h, w = img.shape
-# img = cv.resize(img, (int(0.5*w), int(0.5*h)))
 
 def translation(tx, ty):
     matrix = np.array([[1, 0, tx], [0, 1, ty], [0, 0, 1]])
@@ -106,32 +102,30 @@ def backward_transformation(img, matrix, interpolation):
     return res
 
 
-# display
-H_src = np.array([0.1013, 1.4139, 140.3365, 1.3958, 0.1580, 61.2217, 0.0008, 0.0004, 1.0000], dtype=np.float64)
-H = H_src.reshape(3,3)
-H_inv = np.linalg.inv(H)
-img = cv.imread('D:/Projects/PyCharm/CV_experiment/experiment3/chessboard_image/Image14.jpg', cv.IMREAD_GRAYSCALE)
-res = backward_transformation(img, H_inv, 0)
-plt.imshow(res, cmap='gray')
-plt.show()
+if __name__ == "__main__":
+    # get image
+    img = cv.imread('C:/Users/Admin/Desktop/test.jpg', cv.IMREAD_GRAYSCALE)
+    h, w = img.shape
+    img = cv.resize(img, (int(0.5*w), int(0.5*h)))
 
-# translation_matrix = translation(100, -200)
-# rotation_matrix = rotation(45)
-# euclidean_matrix = euclidean(69, -100, 200)
-# similarity_matrix = similarity(0.8, -158, -189, -146)
-# affine_matrix = affine(1, -3, -2, 1, -167, 140)
-# res1 = forward_transformation(img, rotation_matrix)
-# res2 = backward_transformation(img, rotation_matrix, 0)
-# res3 = backward_transformation(img, rotation_matrix, 1)
-#
-# plt.figure('res')
-# plt.subplot(131), plt.imshow(res1, cmap='gray')
-# plt.xticks([]), plt.yticks([])
-# plt.title('forward')
-# plt.subplot(132), plt.imshow(res2, cmap='gray')
-# plt.xticks([]), plt.yticks([])
-# plt.title('backward-nearest')
-# plt.subplot(133), plt.imshow(res3, cmap='gray')
-# plt.xticks([]), plt.yticks([])
-# plt.title('backward-bilinear')
-# plt.show()
+    # display
+    translation_matrix = translation(100, -200)
+    rotation_matrix = rotation(45)
+    euclidean_matrix = euclidean(69, -100, 200)
+    similarity_matrix = similarity(0.8, -158, -189, -146)
+    affine_matrix = affine(1, -3, -2, 1, -167, 140)
+    res1 = forward_transformation(img, rotation_matrix)
+    res2 = backward_transformation(img, rotation_matrix, 0)
+    res3 = backward_transformation(img, rotation_matrix, 1)
+
+    plt.figure('res')
+    plt.subplot(131), plt.imshow(res1, cmap='gray')
+    plt.xticks([]), plt.yticks([])
+    plt.title('forward')
+    plt.subplot(132), plt.imshow(res2, cmap='gray')
+    plt.xticks([]), plt.yticks([])
+    plt.title('backward-nearest')
+    plt.subplot(133), plt.imshow(res3, cmap='gray')
+    plt.xticks([]), plt.yticks([])
+    plt.title('backward-bilinear')
+    plt.show()
