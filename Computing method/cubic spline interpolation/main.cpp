@@ -4,14 +4,14 @@
 #include "Cubic_Spline_Interpolation.hpp"
 
 
-// 功能实现模块
+// 鍔熻兘瀹炵幇妯″潡
 void splineModule()
 {
 	int num;
-	std::cout << "please input the number of dots:"; // 输入采样点的数量
+	std::cout << "please input the number of dots:"; // 杈撳叆閲囨牱鐐圭殑鏁伴噺
 	std::cin >> num;
-	double* x = new double[num];
-	double* f = new double[num];
+	double* x = new double[num];  // x
+	double* f = new double[num];  // f(x)
 	for (int i = 0; i < num; i++)
 	{
 		std::cout << "x" << i << "=";
